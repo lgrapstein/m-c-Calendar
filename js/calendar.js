@@ -1,9 +1,9 @@
 var timeArray = [
-    { begin: 0930, finish: 1130, text: 'Meeting' },
-    { begin: 1700, finish: 1900, text: 'Meeting' },
-    { begin: 0200, finish: 0300, text: 'Meeting' },
-    { begin: 150, finish: 175, text: 'Meeting' },
-    { begin: 200, finish: 250, text: 'Meeting' }
+  { begin: 0930, finish: 1130, text: 'Meeting' },
+  { begin: 1700, finish: 1900, text: 'Meeting' },
+  { begin: 0200, finish: 0300, text: 'Meeting' },
+  { begin: 150, finish: 175, text: 'Meeting' },
+  { begin: 200, finish: 250, text: 'Meeting' }
 ]
 
 var calendarFunction = function (times) {
@@ -22,12 +22,12 @@ var calendarFunction = function (times) {
     event.direction = 'left'
 
     if (upcomingTimeBlock && event.finish > upcomingTimeBlock.begin) {
-        event.overlap = true
-        upcomingTimeBlock.overlap = true
+      event.overlap = true
+      upcomingTimeBlock.overlap = true
     }
 
     if (previousTimeBlock && previousTimeBlock.direction === 'left') {
-        event.direction = 'right'
+      event.direction = 'right'
     }
 
     event.overlap && newTimeBlockDiv.setAttribute('class', 'split ' + event.direction || '')
