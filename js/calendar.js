@@ -1,9 +1,9 @@
 var timeArray = [
-  { begin: 0930, finish: 1130, text: 'Meeting' },
-  { begin: 1700, finish: 1900, text: 'Meeting' },
-  { begin: 0200, finish: 0300, text: 'Meeting' },
-  { begin: 150, finish: 175, text: 'Meeting' },
-  { begin: 200, finish: 250, text: 'Meeting' }
+  { begin: 0930, finish: 1130, text: 'Meeting', details: 'First Meeting' },
+  { begin: 1700, finish: 1900, text: 'Meeting', details: 'Second Meeting' },
+  { begin: 0200, finish: 0300, text: 'Meeting', details: 'Third Meeting' },
+  { begin: 150, finish: 175, text: 'Meeting', details: 'Fourth Meeting' },
+  { begin: 200, finish: 250, text: 'Meeting', details: 'Fifth Meeting' }
 ]
 
 var calendarFunction = function (times) {
@@ -17,7 +17,8 @@ var calendarFunction = function (times) {
     var eventTop = addSpace * event.begin
     var previousTimeBlock = overlap[i - 1]
     var upcomingTimeBlock = overlap[i + 1]
-    var newTimeBlockDiv = document.createElement('div')
+    var newEventBlockDiv = document.createElement('div')
+    var timeDiv = document.createElement('div')
 
     event.direction = 'left'
 
@@ -30,11 +31,12 @@ var calendarFunction = function (times) {
       event.direction = 'right'
     }
 
-    event.overlap && newTimeBlockDiv.setAttribute('class', 'split ' + event.direction || '')
-    newTimeBlockDiv.setAttribute('style', 'height:' + eventTimeBlock + 'px; top:' + eventTop + 'px')
-    newTimeBlockDiv.innerText = event.begin + ' - ' + event.finish + ' - ' + event.text
+    event.overlap && newEventBlockDiv.setAttribute('class', 'split ' + event.direction || '')
+    newEventBlockDiv.setAttribute('style', 'height:' + eventTimeBlock + 'px; top:' + eventTop + 'px')
+    // calendar.innerText = event.begin + ' - ' + event.finish
+    newEventBlockDiv.innerText = event.text + '\n' + event.details
 
-    document.getElementById('calendar').appendChild(newTimeBlockDiv)
+    document.getElementById('calendar').appendChild(newEventBlockDiv)
   })
 
 }
