@@ -1,4 +1,3 @@
-
 var timeArray = [
     { begin: 0930, finish: 1130, text: 'Meeting' },
     { begin: 1700, finish: 1900, text: 'Meeting' },
