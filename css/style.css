@@ -1,0 +1,54 @@
+h1 {
+  font-family: Arial;
+}
+
+h3 {
+  position: inline-flex;
+  font-family: Arial;
+}
+
+h5 {
+  position: inline-block;
+  font-family: Arial;
+}
+
+#time div {
+  display: inline;
+}
+
+body {
+  background-color: grey;
+  position: inline-block;
+}
+
+#calendar {
+  height: 720px;
+  width: 100%;
+  position: relative;
+}
+
+#calendar div {
+  position: absolute;
+  width: 100%;
+  min-height: 5px;
+  background-color: rgba(0, 0, 0, 0.21);
+  border-left: solid rgb(4, 14, 82);
+  font-family: Arial;
+  font-style: bold;
+  color: rgb(4, 14, 82);
+}
+
+#calendar .split {
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.21);
+}
+
+.right {
+  right: 0;
+  border-left: solid rgb(4, 14, 82);
+}
+
+.left {
+  left: 0;
+  border-left: solid rgb(4, 14, 82);
+}
